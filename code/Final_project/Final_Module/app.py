@@ -16,10 +16,18 @@ import cv2
 from tensorflow.keras.preprocessing import image
 import numpy as np
 
+import os  # make sure this is imported at the top
 
 def dbConnection():
-    connection = pymysql.connect(host="localhost", user="root", password="root", database="creditcard155")
+    connection = pymysql.connect(
+        host=os.environ.get("DB_HOST"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        database=os.environ.get("DB_NAME")
+    )
     return connection
+
+
 
 def dbClose():
     dbConnection().close()    
