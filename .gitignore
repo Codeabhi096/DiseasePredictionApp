@@ -1,0 +1,11 @@
+env/
+venv/
+appenv/
+code/appenv/
+__pycache__/
+*.pyc
+*.log
+*.h5
+*.sqlite3
+.ipynb_checkpoints/
+.vscode/
